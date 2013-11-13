@@ -1,0 +1,30 @@
+<h1>Escaper gram</h1>
+<a href="/map/index"> lets go again . </a>
+      <div id='pics'>
+
+      </div>
+
+<script>
+$(document).ready(function() {
+
+  var my_lat = "<%= params[:lat] %>";
+  var my_lon = "<%= params[:lon] %>";
+
+  var got_images = function (images_obj){
+    for (i = 0; images_obj.length; i++){
+      $("#pics").append('<img src="' + images_obj[i].images.low_resolution.url + '">');
+    }
+  };
+// debugger;
+  $.get("/get_images", {lat: my_lat,lon: my_lon}, got_images);
+
+});
+</script>
+
+
+
+
+
+
+
+

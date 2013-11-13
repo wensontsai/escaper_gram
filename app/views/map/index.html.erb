@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+
+
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2ck8yFy7yYRff1B0DTQAM9Cpu_ao8lSA&sensor=true">
+    </script>
+
+                      <!-- google maps API -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+      function initialize() {
+
+        // initialize new google maps LatLng object
+        var myLatlng = new google.maps.LatLng(40.705786, -74.007672);
+
+        var mapOptions = {
+          center: myLatlng,
+          zoom: 2,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+        // Add the marker to the map
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          title: "Hello World!"
+        });
+
+        var markersArray = [];
+
+        // Add the marker to the map by calling setMap()
+        // marker.setMap(map);
+
+      function placeMarker(location){
+        // first remove all markers if there are any
+        deleteOverlays();
+
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+        var infowindow = new google.maps.InfoWindow({
+          content: 'Latitude: ' + location.lat() +
+          '<br>Longitude: ' + location.lng()
+        });
+
+        infowindow.open(map,marker);
+
+        // add marker in markers array
+        markersArray.push(marker);
+
+        //map.setCenter(location);
+      };
+
+      function deleteOverlays() {
+        if (markersArray) {
+          for (i in markersArray) {
+            markersArray[i].setMap(null);
+          }
+        markersArray.length = 0;
+        }
+      };
+
+
+      google.maps.event.addListener(map, "click", function(event){
+
+            // place a marker
+            placeMarker(event.latLng);
+            map.panTo(event.latLng);
+
+            var zoomCount = 5;
+            function coolZoomer() {
+              map.setZoom(map.getZoom() + 1);
+              zoomCount--;
+              if(zoomCount > 0) {
+                setTimeout(coolZoomer, 700);
+              } else {
+                window.location = '/latlng?lat=' + event.latLng.lat() + '&lon=' + event.latLng.lng();
+
+              }
+            }
+
+            coolZoomer();
+             // setTimeout(function() {
+
+             // })
+
+
+            // event.latLng.lat()
+            // event.latLng.lng()
+
+
+            // display the lat/lng in your form's lat/lng fields
+            // document.getElementById("latfld").value = event.latLng.lat();
+            // document.getElementById("lngfld").value = event.latLng.lng();
+      });
+
+  };
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+         // initialize();
+      });
+    </script>
+
+
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>
