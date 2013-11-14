@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
 
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
       #map-canvas { height: 100% }
     </style>
+
+    <div id="map-canvas"/>
 
 
     <script type="text/javascript"
@@ -64,7 +62,7 @@
 
       function deleteOverlays() {
         if (markersArray) {
-          for (i in markersArray) {
+          for (i = 0; i < markersArray.length; i++) {
             markersArray[i].setMap(null);
           }
         markersArray.length = 0;
@@ -83,7 +81,7 @@
               map.setZoom(map.getZoom() + 1);
               zoomCount--;
               if(zoomCount > 0) {
-                setTimeout(coolZoomer, 700);
+                setTimeout(coolZoomer, 400);
               } else {
                 window.location = '/latlng?lat=' + event.latLng.lat() + '&lon=' + event.latLng.lng();
 
@@ -112,10 +110,3 @@
          // initialize();
       });
     </script>
-
-
-  </head>
-  <body>
-    <div id="map-canvas"/>
-  </body>
-</html>

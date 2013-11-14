@@ -10,6 +10,13 @@ class HomeController < ApplicationController
       @instagram = Instagram.media_search(params[:lat], params[:lon],{count: 25}) #count max=25
       @insta_json = @instagram.to_json
       render :json => @insta_json
-
   end
+
+  def get_images_2_hrs_ago
+      @instagram = Instagram.media_search(params[:lat], params[:lon],{min_timestamp: 2.hours.ago.to_i}) #count max=25
+      @insta_json = @instagram.to_json
+      render :json => @insta_json
+  end
+
+
 end
