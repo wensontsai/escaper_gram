@@ -3,6 +3,7 @@ Escaper::Application.routes.draw do
   root to: "map#index"
   get "/latlng" => "home#index"
   get "/get_images" => "home#get_images"
+  get "/get_images_2_hrs_ago" => "home#get_images_2_hrs_ago"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

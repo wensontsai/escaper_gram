@@ -1,12 +1,16 @@
 <h1>Escaper gram</h1>
 <a href="/map/index"> lets go again . </a>
-      <div id='pics'>
+<br><br>
+<button id="2_hours_ago" type="button">2 hours ago</button>
+<br><br>
+<div id='pics'></div>
+<br><br>
 
-      </div>
+
+
 
 <script>
 $(document).ready(function() {
-
 
   var my_lat = "<%= params[:lat] %>";
   var my_lon = "<%= params[:lon] %>";
@@ -14,7 +18,7 @@ $(document).ready(function() {
   var got_images = function (images_obj){
 
       for (i = 0; images_obj.length; i++){
-        if(images_obj[i].images.low_resolution){
+        if(images_obj[i].images.low_resolution){  // if(images_obj[i]) causes infinite loop
           $("#pics").append('<img src="' + images_obj[i].images.low_resolution.url + '">');
         }
       }
@@ -22,7 +26,10 @@ $(document).ready(function() {
 
   $.get("/get_images", {lat: my_lat,lon: my_lon}, got_images);
 
-
+  $("#2_hours_ago").click(function(event){
+      event.preventDefault();
+      $.get("/get_images_2_hrs_ago", {lat: my_lat,lon: my_lon}, got_images);
+  });
 
 });
 </script>
