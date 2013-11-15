@@ -9,5 +9,37 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require foundation_and_overrides
  *= require_tree .
  */
+
+#x_hours_ago {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.imgbox {
+  display: inline-block;
+  position: relative;
+}
+
+.imgbox img {
+  width: 200px;
+}
+
+.imgbox span {
+  display:none;
+  position: absolute;
+  margin-bottom: 4px;
+  bottom: 0;
+  right: 0;
+  background: black;
+  color: white;
+  font: bold 11px arial,sans-serif;
+  padding: 2px 4px;
+  opacity: .7;
+}
+
+.imgbox:hover span {
+  display:inline-block;
+}

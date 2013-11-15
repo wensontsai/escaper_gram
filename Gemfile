@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'instagram'
 
+gem 'zurb-foundation'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 

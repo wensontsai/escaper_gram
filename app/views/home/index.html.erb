@@ -1,35 +1,69 @@
 <h1>Escaper gram</h1>
 <a href="/map/index"> lets go again . </a>
 <br><br>
-<button id="2_hours_ago" type="button">2 hours ago</button>
+<!-- <button id="2_hours_ago" type="button">2 hours ago</button> -->
+<br>
+<button id="x_hours_ago" type="button">1 hour ago</button>
+
 <br><br>
-<div id='pics'></div>
+<div id='initial_images'></div>
+<div id='1_hr_ago'></div>
 <br><br>
 
 
 
 
 <script>
+var hours_ago = 1;
+
 $(document).ready(function() {
 
   var my_lat = "<%= params[:lat] %>";
   var my_lon = "<%= params[:lon] %>";
 
-  var got_images = function (images_obj){
-
-      for (i = 0; images_obj.length; i++){
-        if(images_obj[i].images.low_resolution){  // if(images_obj[i]) causes infinite loop
-          $("#pics").append('<img src="' + images_obj[i].images.low_resolution.url + '">');
+  var initial_images = function (images_obj){
+      for (i = 0; i < images_obj.length; i++){
+        if (typeof images_obj[i] != "undefined") {
+          if(images_obj[i].images.low_resolution){
+            // console.log(images_obj[i]);
+            $("#initial_images").append('<div class="imgbox"><a href="' + images_obj[i].link + '"><img src="' + images_obj[i].images.low_resolution.url + '"><span>'+images_obj[i].created_time+'</span></a></div>');
+          }
         }
       }
+      // $("#pics").append("break");
   };
 
-  $.get("/get_images", {lat: my_lat,lon: my_lon}, got_images);
+  var got_images = function (images_obj){
+      for (i = 0; i < images_obj.length; i++){
+        if (typeof images_obj[i] != "undefined") {
+          if(images_obj[i].images.low_resolution){
+            // console.log(images_obj[i]);
+            $("#1_hr_ago").append('<div class="imgbox"><a href="' + images_obj[i].link + '"><img src="' + images_obj[i].images.low_resolution.url + '"><span>'+images_obj[i].created_time+'</span></a></div>');
+          }
+        }
+      }
+      // $("#pics").append("break");
+  };
 
-  $("#2_hours_ago").click(function(event){
+  $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
+
+  // $("#2_hours_ago").click(function(event){
+  //     event.preventDefault();
+  //     $.get("/get_images_2_hrs_ago", {lat: my_lat,lon: my_lon, hours_ago:hours_ago}, got_images);
+  // });
+
+  $("#x_hours_ago").click(function(event){
       event.preventDefault();
-      $.get("/get_images_2_hrs_ago", {lat: my_lat,lon: my_lon}, got_images);
+      $.get("/get_images_x_hrs_ago", {lat: my_lat,lon: my_lon, hours_ago:hours_ago+=2}, got_images);
+      $("#x_hours_ago").html(hours_ago + " hours ago");
+      $( "#initial_images" ).animate({
+        opacity: 0.45,
+        }, 400, function() {
+        // Animation complete.
+      });
   });
+
+
 
 });
 </script>
