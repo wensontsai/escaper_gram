@@ -20681,3 +20681,956 @@ Started GET "/get_images_x_hrs_ago?lat=32.694865977875075&lon=-97.20703125&hours
 Processing by HomeController#get_images_x_hrs_ago as */*
   Parameters: {"lat"=>"32.694865977875075", "lon"=>"-97.20703125", "hours_ago"=>"89"}
 Completed 200 OK in 381ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-14 20:20:08 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:20:08 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:20:08 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:20:08 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:08 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:08 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:08 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:08 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:08 -0500
+
+
+Started GET "/latlng?lat=13.66733891121983&lon=100.48095569014549" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"13.66733891121983", "lon"=>"100.48095569014549"}
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+
+
+Started GET "/get_images?lat=13.66733891121983&lon=100.48095569014549" for 127.0.0.1 at 2013-11-14 20:20:17 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"13.66733891121983", "lon"=>"100.48095569014549"}
+Completed 200 OK in 1067ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=13.66733891121983&lon=100.48095569014549&hours_ago=3" for 127.0.0.1 at 2013-11-14 20:20:22 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"13.66733891121983", "lon"=>"100.48095569014549", "hours_ago"=>"3"}
+Completed 200 OK in 306ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=13.66733891121983&lon=100.48095569014549&hours_ago=5" for 127.0.0.1 at 2013-11-14 20:20:27 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"13.66733891121983", "lon"=>"100.48095569014549", "hours_ago"=>"5"}
+Completed 200 OK in 191ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=13.66733891121983&lon=100.48095569014549&hours_ago=7" for 127.0.0.1 at 2013-11-14 20:20:28 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"13.66733891121983", "lon"=>"100.48095569014549", "hours_ago"=>"7"}
+Completed 200 OK in 454ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=13.66733891121983&lon=100.48095569014549&hours_ago=9" for 127.0.0.1 at 2013-11-14 20:20:29 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"13.66733891121983", "lon"=>"100.48095569014549", "hours_ago"=>"9"}
+Completed 200 OK in 905ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-14 20:21:32 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:21:32 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:21:32 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:21:32 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:32 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:32 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:32 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:32 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:32 -0500
+
+
+Started GET "/latlng?lat=40.71395576275327&lon=-74.3115234375" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"40.71395576275327", "lon"=>"-74.3115234375"}
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+
+
+Started GET "/get_images?lat=40.71395576275327&lon=-74.3115234375" for 127.0.0.1 at 2013-11-14 20:21:38 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"40.71395576275327", "lon"=>"-74.3115234375"}
+Completed 200 OK in 907ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=40.71395576275327&lon=-74.3115234375&hours_ago=3" for 127.0.0.1 at 2013-11-14 20:21:42 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"40.71395576275327", "lon"=>"-74.3115234375", "hours_ago"=>"3"}
+
+***** Debugger requested, but was not available (ensure the debugger gem is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+
+Completed 200 OK in 350ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=40.71395576275327&lon=-74.3115234375&hours_ago=5" for 127.0.0.1 at 2013-11-14 20:21:44 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"40.71395576275327", "lon"=>"-74.3115234375", "hours_ago"=>"5"}
+
+***** Debugger requested, but was not available (ensure the debugger gem is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+
+Completed 200 OK in 577ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/latlng?lat=40.71395576275327&lon=-74.3115234375" for 127.0.0.1 at 2013-11-14 20:21:55 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"40.71395576275327", "lon"=>"-74.3115234375"}
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:21:55 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:21:55 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:21:55 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:55 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:55 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:55 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:55 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:21:55 -0500
+
+
+Started GET "/get_images?lat=40.71395576275327&lon=-74.3115234375" for 127.0.0.1 at 2013-11-14 20:21:56 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"40.71395576275327", "lon"=>"-74.3115234375"}
+Completed 200 OK in 744ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=40.71395576275327&lon=-74.3115234375&hours_ago=3" for 127.0.0.1 at 2013-11-14 20:21:57 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"40.71395576275327", "lon"=>"-74.3115234375", "hours_ago"=>"3"}
+
+***** Debugger requested, but was not available (ensure the debugger gem is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+
+Completed 200 OK in 336ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/latlng?lat=40.71395576275327&lon=-74.3115234375" for 127.0.0.1 at 2013-11-14 20:24:10 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"40.71395576275327", "lon"=>"-74.3115234375"}
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 84ms (Views: 83.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:24:10 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:24:10 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:24:10 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:10 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:10 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:11 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:11 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:11 -0500
+
+
+Started GET "/get_images?lat=40.71395576275327&lon=-74.3115234375" for 127.0.0.1 at 2013-11-14 20:24:11 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"40.71395576275327", "lon"=>"-74.3115234375"}
+Completed 200 OK in 2682ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/map/index" for 127.0.0.1 at 2013-11-14 20:24:13 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:24:13 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:24:13 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:24:13 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:13 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:13 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:13 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:13 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:13 -0500
+
+
+Started GET "/latlng?lat=48.864714761802794&lon=2.5048828125" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"48.864714761802794", "lon"=>"2.5048828125"}
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+
+
+Started GET "/get_images?lat=48.864714761802794&lon=2.5048828125" for 127.0.0.1 at 2013-11-14 20:24:21 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"48.864714761802794", "lon"=>"2.5048828125"}
+Completed 200 OK in 676ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=48.864714761802794&lon=2.5048828125&hours_ago=3" for 127.0.0.1 at 2013-11-14 20:24:24 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"48.864714761802794", "lon"=>"2.5048828125", "hours_ago"=>"3"}
+
+
+Started GET "/map/index" for 127.0.0.1 at 2013-11-14 20:28:00 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 92ms (Views: 91.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:28:01 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:28:01 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:28:01 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:01 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:01 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:01 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:01 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:01 -0500
+
+
+Started GET "/latlng?lat=31.746854162921405&lon=35.04638671875" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"31.746854162921405", "lon"=>"35.04638671875"}
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+
+
+Started GET "/get_images?lat=31.746854162921405&lon=35.04638671875" for 127.0.0.1 at 2013-11-14 20:28:10 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"31.746854162921405", "lon"=>"35.04638671875"}
+Completed 200 OK in 1781ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=31.746854162921405&lon=35.04638671875&hours_ago=3" for 127.0.0.1 at 2013-11-14 20:28:17 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"31.746854162921405", "lon"=>"35.04638671875", "hours_ago"=>"3"}
+Completed 200 OK in 349ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=64.12019460255497&lon=-21.895751953125&hours_ago=7" for 127.0.0.1 at 2013-11-14 20:31:59 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"64.12019460255497", "lon"=>"-21.895751953125", "hours_ago"=>"7"}
+Completed 200 OK in 557ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/map/index" for 127.0.0.1 at 2013-11-14 20:32:01 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:32:01 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:32:01 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:32:01 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:01 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:01 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:01 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:01 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:01 -0500
+
+
+Started GET "/latlng?lat=-1.5159363834516735&lon=-48.69140625" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"-1.5159363834516735", "lon"=>"-48.69140625"}
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+
+
+Started GET "/get_images?lat=-1.5159363834516735&lon=-48.69140625" for 127.0.0.1 at 2013-11-14 20:32:08 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"-1.5159363834516735", "lon"=>"-48.69140625"}
+Completed 200 OK in 619ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=-1.5159363834516735&lon=-48.69140625&hours_ago=3" for 127.0.0.1 at 2013-11-14 20:32:13 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"-1.5159363834516735", "lon"=>"-48.69140625", "hours_ago"=>"3"}
+Completed 200 OK in 276ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/map/index" for 127.0.0.1 at 2013-11-14 20:34:10 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:34:11 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:34:11 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:34:11 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:11 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:11 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:11 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:11 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:11 -0500
+
+
+Started GET "/latlng?lat=40.78054143186031&lon=-73.916015625" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"40.78054143186031", "lon"=>"-73.916015625"}
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+
+
+Started GET "/get_images?lat=40.78054143186031&lon=-73.916015625" for 127.0.0.1 at 2013-11-14 20:34:17 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"40.78054143186031", "lon"=>"-73.916015625"}
+Completed 200 OK in 898ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/latlng?lat=39.7240885773337&lon=141.13036572933197" for 127.0.0.1 at 2013-11-14 20:34:40 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"39.7240885773337", "lon"=>"141.13036572933197"}
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:34:40 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:34:40 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:34:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:40 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:40 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:40 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:34:40 -0500
+
+
+Started GET "/get_images?lat=39.7240885773337&lon=141.13036572933197" for 127.0.0.1 at 2013-11-14 20:34:41 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"39.7240885773337", "lon"=>"141.13036572933197"}
+Completed 200 OK in 597ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/latlng?lat=35.74651227692559&lon=139.81201171875" for 127.0.0.1 at 2013-11-14 20:35:03 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"35.74651227692559", "lon"=>"139.81201171875"}
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:35:03 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:35:03 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:35:04 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:35:04 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:35:04 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:35:04 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:35:04 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:35:04 -0500
+
+
+Started GET "/get_images?lat=35.74651227692559&lon=139.81201171875" for 127.0.0.1 at 2013-11-14 20:35:04 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"35.74651227692559", "lon"=>"139.81201171875"}
+Completed 200 OK in 2550ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/latlng?lat=35.74651227692559&lon=139.81201171875" for 127.0.0.1 at 2013-11-14 20:36:28 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"35.74651227692559", "lon"=>"139.81201171875"}
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:29 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:29 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:29 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:29 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:29 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:29 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:29 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:29 -0500
+
+
+Started GET "/get_images?lat=35.74651227692559&lon=139.81201171875" for 127.0.0.1 at 2013-11-14 20:36:29 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"35.74651227692559", "lon"=>"139.81201171875"}
+Completed 200 OK in 2086ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/map/index" for 127.0.0.1 at 2013-11-14 20:36:31 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:31 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:31 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:31 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:31 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:31 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:31 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:31 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:31 -0500
+
+
+Started GET "/latlng?lat=39.9434364619742&lon=32.783203125" for 127.0.0.1 at 2013-11-14 20:36:38 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"39.9434364619742", "lon"=>"32.783203125"}
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:38 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:38 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:38 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:38 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:38 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:38 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:38 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:38 -0500
+
+
+Started GET "/get_images?lat=39.9434364619742&lon=32.783203125" for 127.0.0.1 at 2013-11-14 20:36:39 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"39.9434364619742", "lon"=>"32.783203125"}
+Completed 200 OK in 1799ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/map/index" for 127.0.0.1 at 2013-11-14 20:36:47 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:47 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:47 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:47 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:47 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:47 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:47 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:47 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:47 -0500
+
+
+Started GET "/latlng?lat=47.47266286861342&lon=8.547363113611937" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"47.47266286861342", "lon"=>"8.547363113611937"}
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+
+
+Started GET "/get_images?lat=47.47266286861342&lon=8.547363113611937" for 127.0.0.1 at 2013-11-14 20:36:58 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"47.47266286861342", "lon"=>"8.547363113611937"}
+Completed 200 OK in 970ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/latlng?lat=41.11246878918085&lon=28.828125" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"41.11246878918085", "lon"=>"28.828125"}
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+
+
+Started GET "/get_images?lat=41.11246878918085&lon=28.828125" for 127.0.0.1 at 2013-11-14 20:37:22 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"41.11246878918085", "lon"=>"28.828125"}
+Completed 200 OK in 525ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-15 00:52:49 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 143ms (Views: 141.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-15 00:52:50 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-15 00:52:50 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-15 00:52:50 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-15 00:52:50 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-15 00:52:50 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-15 00:52:50 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-15 00:52:50 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-15 00:52:50 -0500
+
+
+Started GET "/latlng?lat=35.33529320309328&lon=-80.9033203125" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"35.33529320309328", "lon"=>"-80.9033203125"}
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+
+
+Started GET "/get_images?lat=35.33529320309328&lon=-80.9033203125" for 127.0.0.1 at 2013-11-15 00:53:02 -0500
+Processing by HomeController#get_images as */*
+  Parameters: {"lat"=>"35.33529320309328", "lon"=>"-80.9033203125"}
+Completed 200 OK in 958ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=35.33529320309328&lon=-80.9033203125&hours_ago=3" for 127.0.0.1 at 2013-11-15 00:53:09 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"35.33529320309328", "lon"=>"-80.9033203125", "hours_ago"=>"3"}
+Completed 200 OK in 238ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=35.33529320309328&lon=-80.9033203125&hours_ago=5" for 127.0.0.1 at 2013-11-15 00:53:11 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"35.33529320309328", "lon"=>"-80.9033203125", "hours_ago"=>"5"}
+Completed 200 OK in 163ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=35.33529320309328&lon=-80.9033203125&hours_ago=7" for 127.0.0.1 at 2013-11-15 00:53:12 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"35.33529320309328", "lon"=>"-80.9033203125", "hours_ago"=>"7"}
+Completed 200 OK in 228ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/get_images_x_hrs_ago?lat=35.33529320309328&lon=-80.9033203125&hours_ago=9" for 127.0.0.1 at 2013-11-15 00:53:13 -0500
+Processing by HomeController#get_images_x_hrs_ago as */*
+  Parameters: {"lat"=>"35.33529320309328", "lon"=>"-80.9033203125", "hours_ago"=>"9"}
+Completed 200 OK in 176ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/map/index" for 127.0.0.1 at 2013-11-15 00:53:19 -0500
+Processing by MapController#index as HTML
+  Rendered map/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-15 00:53:19 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-11-15 00:53:19 -0500
+
+
+Started GET "/assets/map.css?body=1" for 127.0.0.1 at 2013-11-15 00:53:19 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:19 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:19 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:19 -0500
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:19 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-15 00:53:19 -0500
