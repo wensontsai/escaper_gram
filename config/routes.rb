@@ -1,11 +1,20 @@
 Escaper::Application.routes.draw do
+
+  get "countries/index"
+  get "globe/index"
   get "map/index"
+
   root to: "map#index"
+
+  get "/get_where_u_at" => "home#get_where_u_at"
   get "/latlng" => "home#index"
   # get "/initial_images" => "home#initial_images"
   get "/get_images" => "home#get_images"
-  get "/get_images_2_hrs_ago" => "home#get_images_2_hrs_ago"
+
   get "/get_images_x_hrs_ago" => "home#get_images_x_hrs_ago"
+
+  get "country/:name" => "countries#show"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

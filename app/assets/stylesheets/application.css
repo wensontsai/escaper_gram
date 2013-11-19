@@ -12,8 +12,40 @@
  *= require_tree .
  */
 
-#x_hours_ago {
-  font-size: 30px;
+
+#initial_images_div{
+  float: left;
+}
+
+#x_hrs_div{
+  float: left;
+}
+
+#my_nav_info,
+#updater {
+  padding: 20px 0px 25px 0px;
+}
+
+#map-canvas {
+  width: 1100px;
+  height: 1000px;
+  clear: both;
+}
+
+#site-title {
+  font-size: 25px;
+}
+
+.my_navbar li{
+  padding: 10px 0px 25px 0px;
+  font-size: 15px;
+  display: inline;
+  width: 270px;
+  float: left;
+}
+
+#x_hrs_button {
+  font-size: 15px;
   padding: 10px;
 }
 
@@ -23,7 +55,7 @@
 }
 
 .imgbox img {
-  width: 200px;
+  width: 225px;
 }
 
 .imgbox span {

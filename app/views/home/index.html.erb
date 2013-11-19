@@ -1,66 +1,122 @@
-<h1>Escaper gram</h1>
-<a href="/map/index"> lets go again . </a>
-<br><br>
-<!-- <button id="2_hours_ago" type="button">2 hours ago</button> -->
-<br>
-<button id="x_hours_ago" type="button">1 hour ago</button>
 
-<br><br>
-<div id='initial_images'></div>
-<div id='1_hr_ago'></div>
-<br><br>
+   <!-- <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background: white">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Escapergram</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        </div>
+      </div>
+    </div> -->
+    <div class="container">
+        <div class="my_navbar">
+          <ul>
+            <li id="site-title">Escaper gram</li>
+            <li id="where_u_at">n o w h e r e</li>
+            <li id="my_nav_info"><a href="/map/index"> lets go again . </a></li>
+            <li><button id="x_hrs_button" type="button">2 hours ago</button></li>
+            <li id="updater">this is happening now</li>
 
+          </ul>
+
+        </div>
+
+      <div class="starter-template">
+
+        <div id='initial_images_div' ></div>
+        <div id='x_hrs_div'></div>
+
+
+
+      </div>
+
+    </div><!-- /.container -->
 
 
 
 <script>
-var hours_ago = 1;
+var hours_ago = 2;
 
 $(document).ready(function() {
 
   var my_lat = "<%= params[:lat] %>";
   var my_lon = "<%= params[:lon] %>";
+  var address = "<%= params[:address] %>";
+
+  var set_place_name = function (rev_geocode_obj){
+      $( "#where_u_at").html("escaping in " +address);
+  };
 
   var initial_images = function (images_obj){
       for (i = 0; i < images_obj.length; i++){
         if (typeof images_obj[i] != "undefined") {
           if(images_obj[i].images.low_resolution){
             // console.log(images_obj[i]);
-            $("#initial_images").append('<div class="imgbox"><a href="' + images_obj[i].link + '"><img src="' + images_obj[i].images.low_resolution.url + '"><span>'+images_obj[i].created_time+'</span></a></div>');
+            $("#initial_images_div").append('<div class="imgbox"><a href="' + images_obj[i].link + '"><img src="' + images_obj[i].images.low_resolution.url + '"><span>'+images_obj[i].created_time+'</span></a></div>');
           }
         }
       }
-      // $("#pics").append("break");
   };
+
+  // $.get("/get_where_u_at"), {lat: my_lat,lon: my_lon}, set_place_name);
+  $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
+
 
   var got_images = function (images_obj){
       for (i = 0; i < images_obj.length; i++){
         if (typeof images_obj[i] != "undefined") {
           if(images_obj[i].images.low_resolution){
             // console.log(images_obj[i]);
-            $("#1_hr_ago").append('<div class="imgbox"><a href="' + images_obj[i].link + '"><img src="' + images_obj[i].images.low_resolution.url + '"><span>'+images_obj[i].created_time+'</span></a></div>');
+            $("#x_hrs_div").prepend('<div class=" imgbox ' + hours_ago + '_hrs_class"><a href="' + images_obj[i].link + '"><img src="' + images_obj[i].images.low_resolution.url + '"><span>'+images_obj[i].created_time+'</span></a></div>');
           }
         }
       }
-      // $("#pics").append("break");
   };
 
-  $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
-
-  // $("#2_hours_ago").click(function(event){
-  //     event.preventDefault();
-  //     $.get("/get_images_2_hrs_ago", {lat: my_lat,lon: my_lon, hours_ago:hours_ago}, got_images);
-  // });
-
-  $("#x_hours_ago").click(function(event){
+  $("#x_hrs_button").click(function(event){
       event.preventDefault();
-      $.get("/get_images_x_hrs_ago", {lat: my_lat,lon: my_lon, hours_ago:hours_ago+=2}, got_images);
-      $("#x_hours_ago").html(hours_ago + " hours ago");
-      $( "#initial_images" ).animate({
-        opacity: 0.45,
-        }, 400, function() {
-        // Animation complete.
-      });
+
+      if (hours_ago === 2){
+          $( ".my_navbar ul").append('<li id="my_nav_info"><a href="/get_images" values="lat: my_lat,lon: my_lon"> now. </a></li>');
+          $( "#initial_images" ).animate({
+            opacity: 0.35,
+            }, 700, function() {
+            // Animation complete.
+          });
+
+          $( "#initial_images_div" ).remove();
+      }
+
+
+      if(hours_ago < 22){
+          $.get("/get_images_x_hrs_ago", {lat: my_lat,lon: my_lon, hours_ago:hours_ago+=2}, got_images);
+          $("#x_hrs_button").html(hours_ago + " hours ago");
+
+
+          $( "." +(hours_ago-2)+ "_hrs_class" ).animate({
+              opacity: 0.35,
+              }, 400, function() {
+              // Animation complete.
+          });
+
+          $( "#updater").html("this is " +(hours_ago-2)+ " hours ago");
+        } else {
+          $( "#updater").html("you've seen the last 24hrs");
+
+
+      }
+
   });
 
 

@@ -1,11 +1,29 @@
 
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 100% }
-    </style>
 
-    <div id="map-canvas"/>
+
+    <div class="container">
+        <div class="my_navbar">
+          <ul>
+            <li id="site-title">Escaper gram</li>
+            <ul>
+              <li id="my_nav_info">where do you wanna escape today ?</li>
+              <li id="my_nav_info">(scroll to position, click when ready)</li>
+            </ul>
+          </ul>
+        </div>
+
+        <div class="starter-template">
+
+          <div id="map-canvas"/>
+
+        </div>
+
+    </div><!-- /.container -->
+
+
+
+
+
 
 
     <script type="text/javascript"
@@ -19,7 +37,7 @@
       function initialize() {
 
         // initialize new google maps LatLng object
-        var myLatlng = new google.maps.LatLng(40.705786, -74.007672);
+        var myLatlng = new google.maps.LatLng(0, 0);
 
         var mapOptions = {
           center: myLatlng,
@@ -39,6 +57,13 @@
         // Add the marker to the map by calling setMap()
         // marker.setMap(map);
 
+        var geocoder = new google.maps.Geocoder();
+        var address;
+
+
+
+
+
       function placeMarker(location){
         // first remove all markers if there are any
         deleteOverlays();
@@ -48,8 +73,12 @@
           map: map,
         });
         var infowindow = new google.maps.InfoWindow({
-          content: 'Latitude: ' + location.lat() +
-          '<br>Longitude: ' + location.lng()
+          content:
+
+              'heading to:' +address
+
+          // 'Latitude: ' + location.lat() +
+          // '<br>Longitude: ' + location.lng()
         });
 
         infowindow.open(map,marker);
@@ -69,26 +98,57 @@
         }
       };
 
+      function codeLatLng(location) {
+        // var input = document.getElementById('latlng').value;
+        // var latlngStr = input.split(',', 2);
+        // var lat = parseFloat(latlngStr[0]);
+        // var lng = parseFloat(latlngStr[1]);
+
+
+        geocoder.geocode({'latLng': location}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+              map.setZoom(11);
+              marker = new google.maps.Marker({
+                  position: location,
+                  map: map
+              });
+              infowindow.setContent(results[1].formatted_address);
+              infowindow.open(map, marker);
+            } else {
+              alert('No results found');
+            }
+          } else {
+            alert('Geocoder failed due to: ' + status);
+          }
+        });
+      }
+
+
 
       google.maps.event.addListener(map, "click", function(event){
 
-            // place a marker
-            placeMarker(event.latLng);
-            map.panTo(event.latLng);
+          // grab reverse geocode for display
 
-            var zoomCount = 5;
-            function coolZoomer() {
-              map.setZoom(map.getZoom() + 1);
-              zoomCount--;
-              if(zoomCount > 0) {
-                setTimeout(coolZoomer, 400);
-              } else {
-                window.location = '/latlng?lat=' + event.latLng.lat() + '&lon=' + event.latLng.lng();
+          // var address = codeLatLng(event.latLng);
 
-              }
+          // place a marker
+          placeMarker(event.latLng);
+          map.panTo(event.latLng);
+
+          var zoomCount = 5;
+          function coolZoomer() {
+            map.setZoom(map.getZoom() + 1);
+            zoomCount--;
+            if(zoomCount > 0) {
+              setTimeout(coolZoomer, 400);
+            } else {
+              window.location = '/latlng?lat=' + event.latLng.lat() + '&lon=' + event.latLng.lng() ;
+
             }
+          }
 
-            coolZoomer();
+      coolZoomer();
              // setTimeout(function() {
 
              // })
@@ -101,6 +161,11 @@
             // display the lat/lng in your form's lat/lng fields
             // document.getElementById("latfld").value = event.latLng.lat();
             // document.getElementById("lngfld").value = event.latLng.lng();
+
+
+
+
+
       });
 
   };
