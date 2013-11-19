@@ -23,10 +23,9 @@
         <div class="my_navbar">
           <ul>
             <li id="site-title">Escaper gram</li>
-            <li id="where_u_at">n o w h e r e</li>
             <li id="my_nav_info"><a href="/map/index"> lets go again . </a></li>
             <li><button id="x_hrs_button" type="button">2 hours ago</button></li>
-            <li id="updater">this is happening now</li>
+            <li id="updater">this is happening now on <%= params[:address] %></li>
 
           </ul>
 
@@ -54,8 +53,8 @@ $(document).ready(function() {
   var my_lon = "<%= params[:lon] %>";
   var address = "<%= params[:address] %>";
 
-  var set_place_name = function (rev_geocode_obj){
-      $( "#where_u_at").html("escaping in " +address);
+  var set_place_name = function (){
+      $( "#where_u_at").html(address);
   };
 
   var initial_images = function (images_obj){
@@ -69,7 +68,7 @@ $(document).ready(function() {
       }
   };
 
-  // $.get("/get_where_u_at"), {lat: my_lat,lon: my_lon}, set_place_name);
+  set_place_name();
   $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
 
 
@@ -88,7 +87,7 @@ $(document).ready(function() {
       event.preventDefault();
 
       if (hours_ago === 2){
-          $( ".my_navbar ul").append('<li id="my_nav_info"><a href="/get_images" values="lat: my_lat,lon: my_lon"> now. </a></li>');
+          $( "#my_nav_info").append('<li id="my_nav_info"><a href="/get_images?lat=my_lat,lon: my_lon"> back to now. </a></li>');
           $( "#initial_images" ).animate({
             opacity: 0.35,
             }, 700, function() {
@@ -99,7 +98,7 @@ $(document).ready(function() {
       }
 
 
-      if(hours_ago < 22){
+      if(hours_ago < 24){
           $.get("/get_images_x_hrs_ago", {lat: my_lat,lon: my_lon, hours_ago:hours_ago+=2}, got_images);
           $("#x_hrs_button").html(hours_ago + " hours ago");
 
@@ -110,7 +109,7 @@ $(document).ready(function() {
               // Animation complete.
           });
 
-          $( "#updater").html("this is " +(hours_ago-2)+ " hours ago");
+          $( "#updater").html("this is " +(hours_ago-2)+ " hours ago on "+address);
         } else {
           $( "#updater").html("you've seen the last 24hrs");
 

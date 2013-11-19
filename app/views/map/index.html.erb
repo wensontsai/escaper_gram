@@ -64,7 +64,7 @@
 
 
 
-      function placeMarker(location){
+      function placeMarker(location, address){
         // first remove all markers if there are any
         deleteOverlays();
 
@@ -73,9 +73,7 @@
           map: map,
         });
         var infowindow = new google.maps.InfoWindow({
-          content:
-
-              'heading to:' +address
+          content: 'heading to:     ' + address
 
           // 'Latitude: ' + location.lat() +
           // '<br>Longitude: ' + location.lng()
@@ -98,57 +96,71 @@
         }
       };
 
-      function codeLatLng(location) {
-        // var input = document.getElementById('latlng').value;
-        // var latlngStr = input.split(',', 2);
-        // var lat = parseFloat(latlngStr[0]);
-        // var lng = parseFloat(latlngStr[1]);
+      // function codeLatLng(location) {
+      //   // var input = document.getElementById('latlng').value;
+      //   // var latlngStr = input.split(',', 2);
+      //   // var lat = parseFloat(latlngStr[0]);
+      //   // var lng = parseFloat(latlngStr[1]);
+
+      //   var address;
+      //   geocoder.geocode({'latLng': location}, function(results, status) {
+      //           address = results[1].formatted_address;
 
 
-        geocoder.geocode({'latLng': location}, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-              map.setZoom(11);
-              marker = new google.maps.Marker({
-                  position: location,
-                  map: map
-              });
-              infowindow.setContent(results[1].formatted_address);
-              infowindow.open(map, marker);
-            } else {
-              alert('No results found');
-            }
-          } else {
-            alert('Geocoder failed due to: ' + status);
-          }
-        });
-      }
+
+      //     // if (status == google.maps.GeocoderStatus.OK) {
+      //     //   if (results[1]) {
+      //     //     map.setZoom(11);
+      //     //     marker = new google.maps.Marker({
+      //     //         position: location,
+      //     //         map: map
+      //     //     });
+      //     //     infowindow.setContent(results[1].formatted_address);
+      //     //     infowindow.open(map, marker);
+      //     //   } else {
+      //     //     alert('No results found');
+      //     //   }
+      //     // } else {
+      //     //   alert('Geocoder failed due to: ' + status);
+      //     // }
+      //   });
+      //   return address;
+      // }
 
 
 
       google.maps.event.addListener(map, "click", function(event){
 
           // grab reverse geocode for display
+          // var address =
+          // codeLatLng(event.latLng);
+          var latlng = new google.maps.LatLng(parseFloat(event.latLng.lat()), parseFloat(event.latLng.lng()));
 
-          // var address = codeLatLng(event.latLng);
+          geocoder.geocode({"latLng": latlng}, function(results, status) {
+            if (results.length > 0) {
+              address = results[0].formatted_address;
+              // place a marker
+              placeMarker(event.latLng, address);
+              map.panTo(event.latLng);
 
-          // place a marker
-          placeMarker(event.latLng);
-          map.panTo(event.latLng);
+              var zoomCount = 5;
+              function coolZoomer() {
+                map.setZoom(map.getZoom() + 1);
+                zoomCount--;
+                if(zoomCount > 0) {
+                  setTimeout(coolZoomer, 400);
+                } else {
+                  window.location = '/latlng?lat=' + event.latLng.lat() + '&lon=' + event.latLng.lng() + '&address=' + address;
+                }
+              }
 
-          var zoomCount = 5;
-          function coolZoomer() {
-            map.setZoom(map.getZoom() + 1);
-            zoomCount--;
-            if(zoomCount > 0) {
-              setTimeout(coolZoomer, 400);
+              coolZoomer();
             } else {
-              window.location = '/latlng?lat=' + event.latLng.lat() + '&lon=' + event.latLng.lng() ;
-
+              alert("i pity the fool who clicks on blue thinkin it's land");
             }
-          }
+          });
 
-      coolZoomer();
+
              // setTimeout(function() {
 
              // })

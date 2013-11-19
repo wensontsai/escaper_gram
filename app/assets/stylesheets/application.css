@@ -21,6 +21,7 @@
   float: left;
 }
 
+
 #my_nav_info,
 #updater {
   padding: 20px 0px 25px 0px;
@@ -40,7 +41,7 @@
   padding: 10px 0px 25px 0px;
   font-size: 15px;
   display: inline;
-  width: 270px;
+  width: 250px;
   float: left;
 }
 
