@@ -9,11 +9,11 @@ Escaper::Application.routes.draw do
   get "/get_where_u_at" => "home#get_where_u_at"
   get "/latlng" => "home#index"
   # get "/initial_images" => "home#initial_images"
-  get "/get_images" => "home#get_images"
-
+  get "/get_images" => "home#get_images", :defaults => { :format => 'json' }
   get "/get_images_x_hrs_ago" => "home#get_images_x_hrs_ago"
 
   get "country/:name" => "countries#show"
+  get "get_lat_lon" => "countries#get_lat_lon"
 
 
 

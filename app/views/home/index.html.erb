@@ -76,7 +76,6 @@ $(document).ready(function() {
       for (i = 0; i < images_obj.length; i++){
         if (typeof images_obj[i] != "undefined") {
           if(images_obj[i].images.low_resolution){
-            // console.log(images_obj[i]);
             $("#x_hrs_div").prepend('<div class=" imgbox ' + hours_ago + '_hrs_class"><a href="' + images_obj[i].link + '"><img src="' + images_obj[i].images.low_resolution.url + '"><span>'+images_obj[i].created_time+'</span></a></div>');
           }
         }
@@ -87,7 +86,9 @@ $(document).ready(function() {
       event.preventDefault();
 
       if (hours_ago === 2){
-          $( "#my_nav_info").append('<li id="my_nav_info"><a href="/get_images?lat=my_lat,lon: my_lon"> back to now. </a></li>');
+          $( "#my_nav_info").append(
+            '<li id="my_nav_info"><%= link_to("back to now.",get_images_path(:html)+"?lat=#{params[:lat]}&lon=#{params[:lon]}", {lat: params[:lat], lon: params[:lon]}) %></li>');
+
           $( "#initial_images" ).animate({
             opacity: 0.35,
             }, 700, function() {
