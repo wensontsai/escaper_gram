@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119213802) do
+ActiveRecord::Schema.define(version: 20131120230957) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "lat"
+    t.decimal  "lon"
+  end
+
+  create_table "photos_nows", force: true do |t|
+    t.integer  "country_id"
+    t.string   "recent_photos"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

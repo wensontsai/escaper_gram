@@ -47,17 +47,22 @@
 <script>
 var hours_ago = 2;
 
+var my_lat;
+var my_lon;
+
 $(document).ready(function() {
 
   var country_name = "<%= params[:name] %>";
-  var my_lat;
-  var my_lat;
 
-  var set_lat_lon = function(location_obj){
+
+  var set_and_get = function(location_obj){
       my_lat = location_obj.results[0].geometry.location.lat;
       my_lon = location_obj.results[0].geometry.location.lng;
-debugger;
+      $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
+
   }
+
+
 
   var set_place_name = function (){
       $( "#where_u_at").html(country_name);
@@ -75,9 +80,12 @@ debugger;
 
 
 
-  $.get("/get_lat_lon", {name: country_name}, set_lat_lon);
+  $.get("/get_lat_lon", {name: country_name}, set_and_get);
+
   set_place_name();
-  $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
+
+
+  // $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
 
 
   var got_images = function (images_obj){

@@ -76,6 +76,11 @@ d3.json("/world-countries.json", function(collection) {
 
 
       .on("click", function(d) {
+        for(i = 0; i < d.length ; i++){
+
+        }
+
+
         window.location = "/country/" + d.properties.name + '?name=' + d.properties.name;
       });
 
@@ -86,6 +91,11 @@ d3.json("/world-countries.json", function(collection) {
 
 
 });
+
+
+
+
+
 
 d3.select(window)
     .on("mousemove", mousemove)

@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   def get_images
       lat = params[:lat]
       lon = params[:lon]
-      @instagram = Instagram.media_search(params[:lat], params[:lon],{count: 25}) #count max=25
+      @instagram = Instagram.media_search(params[:lat], params[:lon],{count: 25, distance: 5000}) #count max=25
       @insta_json = @instagram.to_json
 
       respond_to do |format|
