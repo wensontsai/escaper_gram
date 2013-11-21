@@ -63,7 +63,9 @@ var svg = d3.select("#body").append("svg:svg")
     .attr("height", 800)
     .on("mousedown", mousedown);
 
-svg.append("defs").append("")
+var defs = svg.append('svg:defs');
+
+// svg.append("defs").append("")
 
 
 
@@ -81,6 +83,10 @@ d3.json("/world-countries.json", function(collection) {
       //    .attr("xlink:href", "http://www.iwu.edu/wellness/specialevents/images/cookies.jpeg")
 
 
+      .attr("clip-path", "url(#clip)")
+      // .append("svg:image")
+      // .attr("xlink:href", "http://www.iwu.edu/wellness/specialevents/images/cookies.jpeg")
+
 
       .on("click", function(d) {
         for(i = 0; i < d.length ; i++){
@@ -93,6 +99,20 @@ d3.json("/world-countries.json", function(collection) {
 
   feature.append("svg:title")
       .text(function(d) { return d.properties.name; });
+
+  // defs.append('svg:pattern')
+  //     .attr('id', 'tile-ww')
+  //     .attr('patternUnits', 'userSpaceOnUse')
+  //     .attr('width', '6')
+  //     .attr('height', '6')
+  //     .append('svg:image')
+  //     .attr('xlink:href', 'http://www.iwu.edu/wellness/specialevents/images/cookies.jpeg')
+  //     .attr('x', 0)
+  //     .attr('y', 0)
+  //     .attr('width', 6)
+  //     .attr('height', 6);
+
+
 
 
 });
