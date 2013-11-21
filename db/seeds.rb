@@ -17,19 +17,21 @@ countries["features"].each do |country|
   @response = @response.to_json
   @response = JSON.parse(@response)
 
+  @recent_2hr_array = Instagram.media_search(@response["results"][0]["geometry"]["location"]["lat"], @response["results"][0]["geometry"]["location"]["lng"],{count: 1, distance: 5000})
+  @recent_2hr_array = @recent_2hr_array.to_json
+  @recent_2hr_array = JSON.parse(@recent_2hr_array)
+
 
   if @response["results"][0]["geometry"]["location"]["lat"] && @response["results"][0]["geometry"]["location"]["lng"]
-    Country.create!(name: country["properties"]["name"], lat: @response["results"][0]["geometry"]["location"]["lat"], lon: @response["results"][0]["geometry"]["location"]["lng"])
-  p "saved #{@formatted_name} / #{@response["results"][0]["geometry"]["location"]["lat"]} / #{@response["results"][0]["geometry"]["location"]["lng"]}"
+    Country.create!(name: country["properties"]["name"], lat: @response["results"][0]["geometry"]["location"]["lat"], lon: @response["results"][0]["geometry"]["location"]["lng"], globe_photo: @recent_2hr_array[0]["images"]["low_resolution"]["url"])
+  p "saved #{@formatted_name} / #{@response["results"][0]["geometry"]["location"]["lat"]} / #{@response["results"][0]["geometry"]["location"]["lng"]} / #{@recent_2hr_array[0]["images"]["low_resolution"]["url"]}"
   else
   p "#{formatted_name} is bunk"
   end
 
 
 
-  @recent_2hr_array = Instagram.media_search(@response["results"][0]["geometry"]["location"]["lat"], @response["results"][0]["geometry"]["location"]["lng"],{count: 25, distance: 5000})
-  @recent_2hr_array = @recent_2hr_array.to_json
-  @recent_2hr_array = JSON.parse(@recent_2hr_array)
+
 
 
 end

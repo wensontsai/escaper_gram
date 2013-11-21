@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120230957) do
+ActiveRecord::Schema.define(version: 20131121004809) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131120230957) do
     t.datetime "updated_at"
     t.decimal  "lat"
     t.decimal  "lon"
+    t.text     "globe_photo"
   end
 
   create_table "photos_nows", force: true do |t|

@@ -73,14 +73,10 @@ d3.json("/world-countries.json", function(collection) {
       .attr("d", clip)
       .attr("id", function(d) { return d.properties.name; })
 
-
-
       .on("click", function(d) {
         for(i = 0; i < d.length ; i++){
 
         }
-
-
         window.location = "/country/" + d.properties.name + '?name=' + d.properties.name;
       });
 
