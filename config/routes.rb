@@ -4,7 +4,7 @@ Escaper::Application.routes.draw do
   get "globe/index"
   get "map/index"
 
-  root to: "map#index"
+  root to: "globe#index"
 
   get "/get_where_u_at" => "home#get_where_u_at"
   get "/latlng" => "home#index"

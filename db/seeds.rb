@@ -16,22 +16,29 @@ countries["features"].each do |country|
   @response = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + @formatted_name + "&sensor=true")
   @response = @response.to_json
   @response = JSON.parse(@response)
+    if @response && @response.length > 0
+        @lat = @response["results"][0]["geometry"]["location"]["lat"]
+        @lon = @response["results"][0]["geometry"]["location"]["lng"]
 
-  @recent_2hr_array = Instagram.media_search(@response["results"][0]["geometry"]["location"]["lat"], @response["results"][0]["geometry"]["location"]["lng"],{count: 1, distance: 5000})
-  @recent_2hr_array = @recent_2hr_array.to_json
-  @recent_2hr_array = JSON.parse(@recent_2hr_array)
+        @recent_2hr_array = Instagram.media_search(@response["results"][0]["geometry"]["location"]["lat"], @response["results"][0]["geometry"]["location"]["lng"],{count: 1, distance: 5000})
+        @recent_2hr_array = @recent_2hr_array.to_json
+        @recent_2hr_array = JSON.parse(@recent_2hr_array)
 
-
-  if @response["results"][0]["geometry"]["location"]["lat"] && @response["results"][0]["geometry"]["location"]["lng"]
-    Country.create!(name: country["properties"]["name"], lat: @response["results"][0]["geometry"]["location"]["lat"], lon: @response["results"][0]["geometry"]["location"]["lng"], globe_photo: @recent_2hr_array[0]["images"]["low_resolution"]["url"])
-  p "saved #{@formatted_name} / #{@response["results"][0]["geometry"]["location"]["lat"]} / #{@response["results"][0]["geometry"]["location"]["lng"]} / #{@recent_2hr_array[0]["images"]["low_resolution"]["url"]}"
-  else
-  p "#{formatted_name} is bunk"
-  end
+        if @recent_2hr_array && @recent_2hr_array.length > 0
+          @first_photo = @recent_2hr_array[0]["images"]["low_resolution"]["url"]
 
 
+            if @first_photo
+                if @lat && @lon
+                  Country.create!(name: @name, lat: @lat, lon: @lon, globe_photo: @first_photo)
+                end
+            else
+              @first_photo = "https://lh3.ggpht.com/-gFbzXsG4uBs/UIF_GOs1teI/AAAAAAAAJq8/OWGj_MTx8hY/s1600/statue+2.png"
+            end
 
+            p "saved #{@formatted_name} / #{@lat} / #{@lon} / #{@first_photo}"
 
+        end
 
-
+    end
 end

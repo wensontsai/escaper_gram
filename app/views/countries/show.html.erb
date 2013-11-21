@@ -22,62 +22,50 @@
     <div class="container">
         <div class="my_navbar">
           <ul>
-            <li id="site-title">Escaper gram</li>
-            <li id="my_nav_info"><a href="/globe/index"> take it to the globe . </a></li>
-            <li><button id="x_hrs_button" type="button">2 hours ago</button></li>
-            <li id="updater">this is happening now in <%= params[:name] %></li>
+            <li id="site-title"><a href="/globe/index">Escapergram</a></li>
+            <li id="my_nav_info">where do you wanna escape today ?</li>
+            <li id="my_nav_info"></li>
+           <!--  <li id="my_nav_info"><a href="/globe/index"> take it to the globe . </a></li> -->
+            <!-- <li><button id="x_hrs_button" type="button">2 hours ago</button></li> -->
+            <li id="updater">dive deeper into <%= params[:name] %></li>
 
           </ul>
 
         </div>
 
-      <div class="starter-template">
+        <div class="starter-template">
 
-        <div id='initial_images_div' ></div>
-        <div id='x_hrs_div'></div>
+          <div id="map-canvas"/>
 
-
-
-      </div>
+        </div>
 
     </div><!-- /.container -->
 
 
 
-<script>
-var hours_ago = 2;
 
-var my_lat;
-var my_lon;
+<script type="text/javascript">
+  var hours_ago = 2;
+
+  var my_lat;
+  var my_lon;
 
 $(document).ready(function() {
 
-  var country_name = "<%= params[:name] %>";
 
+  var country_name = "<%= params[:name] %>";
+  var cleaned_address;
 
   var set_and_get = function(location_obj){
       my_lat = location_obj.results[0].geometry.location.lat;
       my_lon = location_obj.results[0].geometry.location.lng;
-      $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
-
+      initialize();
   }
-
 
 
   var set_place_name = function (){
       $( "#where_u_at").html(country_name);
   };
-
-  var initial_images = function (images_obj){
-      for (i = 0; i < images_obj.length; i++){
-        if (typeof images_obj[i] != "undefined") {
-          if(images_obj[i].images.low_resolution){
-            $("#initial_images_div").append('<div class="imgbox"><a href="' + images_obj[i].link + '"><img src="' + images_obj[i].images.low_resolution.url + '"><span>'+images_obj[i].created_time+'</span></a></div>');
-          }
-        }
-      }
-  };
-
 
 
   $.get("/get_lat_lon", {name: country_name}, set_and_get);
@@ -85,55 +73,110 @@ $(document).ready(function() {
   set_place_name();
 
 
-  // $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
+                      <!-- google maps API -->
+      function initialize() {
+
+        // initialize new google maps LatLng object
+        var myLatlng = new google.maps.LatLng(my_lat, my_lon);
+
+        var mapOptions = {
+          center: myLatlng,
+          zoom:5,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+        // Add the marker to the map
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          title: "Hello World!"
+        });
+
+        var markersArray = [];
+
+        // Add the marker to the map by calling setMap()
+        // marker.setMap(map);
+
+        var geocoder = new google.maps.Geocoder();
+        var address;
 
 
-  var got_images = function (images_obj){
-      for (i = 0; i < images_obj.length; i++){
-        if (typeof images_obj[i] != "undefined") {
-          if(images_obj[i].images.low_resolution){
-            // console.log(images_obj[i]);
-            $("#x_hrs_div").prepend('<div class=" imgbox ' + hours_ago + '_hrs_class"><a href="' + images_obj[i].link + '"><img src="' + images_obj[i].images.low_resolution.url + '"><span>'+images_obj[i].created_time+'</span></a></div>');
+
+      function placeMarker(location, address){
+        // first remove all markers if there are any
+        deleteOverlays();
+
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+        var infowindow = new google.maps.InfoWindow({
+          content: address
+          // 'Latitude: ' + location.lat() +
+          // '<br>Longitude: ' + location.lng()
+        });
+
+        infowindow.open(map,marker);
+
+        // add marker in markers array
+        markersArray.push(marker);
+
+        //map.setCenter(location);
+      };
+
+      function deleteOverlays() {
+        if (markersArray) {
+          for (i = 0; i < markersArray.length; i++) {
+            markersArray[i].setMap(null);
           }
+        markersArray.length = 0;
         }
-      }
+      };
+
+
+
+      google.maps.event.addListener(map, "click", function(event){
+
+          // grab reverse geocode for display
+          // var address =
+          // codeLatLng(event.latLng);
+          var latlng = new google.maps.LatLng(parseFloat(event.latLng.lat()), parseFloat(event.latLng.lng()));
+
+          geocoder.geocode({"latLng": latlng}, function(results, status) {
+            if (results.length > 0) {
+              address = results[0].formatted_address;
+              // place a marker
+              placeMarker(event.latLng, address);
+              map.panTo(event.latLng);
+
+              var zoomCount = 5;
+              function coolZoomer() {
+                map.setZoom(map.getZoom() + 1);
+                zoomCount--;
+                if(zoomCount > 0) {
+                  setTimeout(coolZoomer, 400);
+                } else {
+                  window.location = '/latlng?lat=' + event.latLng.lat() + '&lon=' + event.latLng.lng() + '&address=' + address;
+                }
+              }
+
+              coolZoomer();
+            } else {
+              alert("i pity the fool who clicks on blue thinkin it's land");
+            }
+          });
+
+
+
+
+      });
+
   };
 
-
-  $("#x_hrs_button").click(function(event){
-      event.preventDefault();
-      if (hours_ago === 2){
-          $( "#my_nav_info").append('<li id="my_nav_info"><a href="/get_images?lat=my_lat,lon: my_lon"> back to now. </a></li>');
-          $( "#initial_images" ).animate({
-            opacity: 0.35,
-            }, 700, function() {
-            // Animation complete.
-          });
-
-          $( "#initial_images_div" ).remove();
-      }
-
-
-      if(hours_ago < 24){
-          $.get("/get_images_x_hrs_ago", {lat: my_lat,lon: my_lon, hours_ago:hours_ago+=2}, got_images);
-          $("#x_hrs_button").html(hours_ago + " hours ago");
-          $( "." +(hours_ago-2)+ "_hrs_class" ).animate({
-              opacity: 0.35,
-              }, 400, function() {
-              // Animation complete.
-          });
-          $( "#updater").html("this is " +(hours_ago-2)+ " hours ago in "+address);
-        } else {
-          $( "#updater").html("you've seen the last 24hrs");
-      }
-
-  });
-
-
-
+    google.maps.event.addDomListener(window, 'load', initialize);
+    // initialize();
 });
 </script>
-
 
 
 

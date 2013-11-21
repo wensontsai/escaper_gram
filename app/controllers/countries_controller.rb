@@ -9,9 +9,5 @@ class CountriesController < ApplicationController
     render :json => @response_json
   end
 
-  def get_all_lat_lon
-
-
-  end
 
 end

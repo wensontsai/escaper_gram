@@ -22,8 +22,8 @@
     <div class="container">
         <div class="my_navbar">
           <ul>
-            <li id="site-title">Escaper gram</li>
-            <li id="my_nav_info"><a href="/map/index"> lets go again . </a></li>
+            <li id="site-title"><a href="/globe/index">Escapergram</a></li>
+            <li id="my_nav_info"><a href="/globe/index"> lets go again . </a></li>
             <li><button id="x_hrs_button" type="button">2 hours ago</button></li>
             <li id="updater">this is happening now on <%= params[:address] %></li>
 
@@ -46,16 +46,37 @@
 
 <script>
 var hours_ago = 2;
+var my_lat = "<%= params[:lat] %>";
+var my_lon = "<%= params[:lon] %>";
+var address = "<%= params[:address] %>";
+// var cleaned_address;
 
 $(document).ready(function() {
 
-  var my_lat = "<%= params[:lat] %>";
-  var my_lon = "<%= params[:lon] %>";
-  var address = "<%= params[:address] %>";
+
+  // if (address === undefined){
+  //       var latlng = new google.maps.LatLng(my_lat, my_lon);
+  //       geocoder.geocode({"latLng": latlng}, function(results, status) {
+  //         if (results.length > 0) {
+  //             address = results[0].formatted_address;
+  //           }
+  //       };
+  // }
+
+  // var get_address_again = function(){
+  //       var latlng = new google.maps.LatLng(my_lat, my_lon);
+  //       geocoder.geocode({"latLng": latlng}, function(results, status) {
+  //         if (results.length > 0) {
+  //             address = results[0].formatted_address;
+  //         }
+  //       }
+  // };
+
 
   var set_place_name = function (){
       $( "#where_u_at").html(address);
   };
+
 
   var initial_images = function (images_obj){
       for (i = 0; i < images_obj.length; i++){
@@ -82,12 +103,19 @@ $(document).ready(function() {
       }
   };
 
+  // var address_cleaner = function()
+  //         cleaned_address = address.replace(/(\s)/ ,"%20");
+  // };
+
+
+
+
   $("#x_hrs_button").click(function(event){
       event.preventDefault();
 
       if (hours_ago === 2){
           $( "#my_nav_info").append(
-            '<li id="my_nav_info"><%= link_to("back to now.",get_images_path(:html)+"?lat=#{params[:lat]}&lon=#{params[:lon]}", {lat: params[:lat], lon: params[:lon]}) %></li>');
+            '<li id="my_nav_info"><%= link_to( "back to now.", get_images_path(:html) + "?lat=#{params[:lat]}&lon=#{params[:lon]}" ) %></li>');
 
           $( "#initial_images" ).animate({
             opacity: 0.35,

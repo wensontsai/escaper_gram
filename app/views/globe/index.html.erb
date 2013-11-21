@@ -2,10 +2,10 @@
    <div class="container">
         <div class="my_navbar">
           <ul>
-            <li id="site-title">Escaper gram</li>
+            <li id="site-title"><a href="/globe/index">Escapergram</a></li>
             <ul>
               <li id="my_nav_info">where do you wanna escape today ?</li>
-              <li id="my_nav_info">(scroll to position, click when ready)</li>
+              <li id="my_nav_info"></li>
             </ul>
           </ul>
         </div>
@@ -17,7 +17,7 @@
 
     <div id="body">
       <div id="footer">
-        d3.geo.azimuthal
+        <!-- d3.geo.azimuthal -->
         <div class="hint">drag to rotate the origin</div>
         <div><select>
           <option value="equalarea">equalarea</option>
@@ -69,9 +69,16 @@ var svg = d3.select("#body").append("svg:svg")
 d3.json("/world-countries.json", function(collection) {
   feature = svg.selectAll("path")
       .data(collection.features)
-    .enter().append("svg:path")
+      .enter().append("svg:path")
       .attr("d", clip)
       .attr("id", function(d) { return d.properties.name; })
+
+
+
+      // feature.append("svg:image")
+      //    .attr("xlink:href", "http://www.iwu.edu/wellness/specialevents/images/cookies.jpeg")
+
+
 
       .on("click", function(d) {
         for(i = 0; i < d.length ; i++){

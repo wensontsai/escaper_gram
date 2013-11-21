@@ -13,6 +13,7 @@
  */
 
 
+
 #initial_images_div{
   float: left;
 }
@@ -35,6 +36,31 @@
 
 #site-title {
   font-size: 25px;
+}
+
+#site-title a:hover{
+    text-decoration: none;
+    color:#ECC3BF;
+}
+
+#my_nav_info a:hover{
+    text-decoration: none;
+    color:#EEB4B4;
+
+}
+
+
+body {color:#362819;}
+h1 {color:#362819;}
+
+
+
+a:link {
+  color:#330000;
+}
+
+a:visited {
+  color:#362819;
 }
 
 .my_navbar li{
