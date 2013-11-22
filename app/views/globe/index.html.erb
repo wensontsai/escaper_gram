@@ -68,7 +68,23 @@ var defs = svg.append('svg:defs');
 // svg.append("defs").append("")
 
 
-
+d3.json("/globe_photos", function(collection) {
+  pattern = defs.selectAll("pattern")
+    .data(collection)
+      .enter()
+      .append("pattern")
+        .attr("id", function(d) { return d[0].replace(/\s/g, ""); })
+        .attr("patternUnits", "objectBoundingBox")
+        .attr("width", 306)
+        .attr("height", 306)
+        .append("svg:image")
+          .attr("xlink:href", function(d) { return d[1]; })
+          // .attr("xlink:href", function(d) { return "http://abcnews.go.com/images/Lifestyle/GTY_yawning_dog_dm_130807.jpg"; })
+          .attr("x", 0)
+          .attr("y", 0)
+          .attr("width", 306)
+          .attr("height", 306)
+});
 
 d3.json("/world-countries.json", function(collection) {
   feature = svg.selectAll("path")
@@ -76,6 +92,9 @@ d3.json("/world-countries.json", function(collection) {
       .enter().append("svg:path")
       .attr("d", clip)
       .attr("id", function(d) { return d.properties.name; })
+      // .attr("fill", "#dddd00")
+      // .attr("fill", function(d) { return "url(#" + d.properties.name.replace(/\s/g, "") + ")"})
+      .attr("fill", function(d) { return "url(#Afghanistan)"})
 
 
 
@@ -83,7 +102,7 @@ d3.json("/world-countries.json", function(collection) {
       //    .attr("xlink:href", "http://www.iwu.edu/wellness/specialevents/images/cookies.jpeg")
 
 
-      .attr("clip-path", "url(#clip)")
+      // .attr("clip-path", "url(#clip)")
       // .append("svg:image")
       // .attr("xlink:href", "http://www.iwu.edu/wellness/specialevents/images/cookies.jpeg")
 
@@ -95,6 +114,13 @@ d3.json("/world-countries.json", function(collection) {
         window.location = "/country/" + d.properties.name + '?name=' + d.properties.name;
       });
 
+  feature.append("svg:image")
+          // .attr("xlink:href", function(d) { return d[1]; })
+          .attr("xlink:href", function(d) { return "http://abcnews.go.com/images/Lifestyle/GTY_yawning_dog_dm_130807.jpg"; })
+          .attr("x", 0)
+          .attr("y", 0)
+          .attr("width", 306)
+          .attr("height", 306)
 
 
   feature.append("svg:title")

@@ -14,7 +14,7 @@ Escaper::Application.routes.draw do
 
   get "country/:name" => "countries#show"
   get "get_lat_lon" => "countries#get_lat_lon"
-
+  get "globe_photos" => "countries#country_pictures"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

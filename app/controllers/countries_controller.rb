@@ -9,5 +9,9 @@ class CountriesController < ApplicationController
     render :json => @response_json
   end
 
+  def country_pictures
+    render :json => Country.where("globe_photo IS NOT NULL").map {|c| [c.name, c.globe_photo]}
+  end
+
 
 end
