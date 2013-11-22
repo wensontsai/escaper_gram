@@ -79,6 +79,7 @@ $(document).ready(function() {
 
 
   var initial_images = function (images_obj){
+    $( "#initial_images_div" ).html('');
       for (i = 0; i < images_obj.length; i++){
         if (typeof images_obj[i] != "undefined") {
           if(images_obj[i].images.low_resolution){
@@ -90,7 +91,22 @@ $(document).ready(function() {
   };
 
   set_place_name();
-  $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
+
+(function worker() {
+  $.ajax({
+    url: "/get_images",
+    data: {lat: my_lat,lon: my_lon},
+    success: initial_images,
+    complete: function() {
+      setTimeout(worker, 10000);
+
+    }
+  });
+})();
+
+
+
+  // $.get("/get_images", {lat: my_lat,lon: my_lon}, initial_images);
 
 
   var got_images = function (images_obj){
@@ -123,7 +139,7 @@ $(document).ready(function() {
             // Animation complete.
           });
 
-          $( "#initial_images_div" ).remove();
+          $( "#initial_images_div" ).html('');
       }
 
 
