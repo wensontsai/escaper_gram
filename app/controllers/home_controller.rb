@@ -13,7 +13,7 @@ class HomeController < ApplicationController
       @insta_json = @instagram.to_json
 
       respond_to do |format|
-        format.html { redirect_to latlng_path()+"?lat=#{params[:lat]}&lon=#{params[:lon]}&address=#{params[:address]}" }
+        format.html { redirect_to latlng_path()+"?lat=#{params[:lat]}&lon=#{params[:lon]}&address=#{URI.encode(params[:address])}" }
         format.json  { render :json => @insta_json }
       end
   end

@@ -92,17 +92,25 @@ $(document).ready(function() {
 
   set_place_name();
 
-(function worker() {
+var refresher = function () {
   $.ajax({
     url: "/get_images",
     data: {lat: my_lat,lon: my_lon},
     success: initial_images,
-    complete: function() {
-      setTimeout(worker, 10000);
-
-    }
+    complete: get_fresh
   });
-})();
+};
+
+var refresher_not = true;
+var timeout = null;
+
+var get_fresh = function() {
+  if (refresher_not === true){
+      timeout = setTimeout(refresher, 5000);
+  }
+}
+
+refresher();
 
 
 
@@ -128,16 +136,18 @@ $(document).ready(function() {
 
   $("#x_hrs_button").click(function(event){
       event.preventDefault();
+      refresher_not = false;
+      clearTimeout(timeout);
 
       if (hours_ago === 2){
           $( "#my_nav_info").append(
-            '<li id="my_nav_info"><%= link_to( "back to now.", get_images_path(:html) + "?lat=#{params[:lat]}&lon=#{params[:lon]}" ) %></li>');
+            '<li id="my_nav_info"><%= link_to( "back to now.", get_images_path(:html) + "?lat=#{params[:lat]}&lon=#{params[:lon]}&address=#{URI::encode( params[:address] ) if params[:address]}" ) %></li>');
 
-          $( "#initial_images" ).animate({
-            opacity: 0.35,
-            }, 700, function() {
-            // Animation complete.
-          });
+          // $( "#initial_images" ).animate({
+          //   opacity: 0.35,
+          //   }, 700, function() {
+          //   // Animation complete.
+          // });
 
           $( "#initial_images_div" ).html('');
       }
