@@ -12,7 +12,30 @@
  *= require_tree .
  */
 
+.starter-template {
+  float: left;
+}
 
+#sign_in,
+#sign_up {
+  padding: 15px 0px 0px 110px;
+  float:left;
+}
+
+#user_info {
+  color:#ECC3BF;
+}
+
+#sidebar{
+  padding: 30px 0px 0px 135px;
+  text-align: right;
+
+}
+
+#sidebar a:hover{
+    text-decoration: none;
+    color:#EEB4B4;
+}
 
 #initial_images_div{
   float: left;
@@ -22,7 +45,7 @@
   float: left;
 }
 
-
+#footer,
 #my_nav_info,
 #updater {
   padding: 20px 0px 25px 0px;

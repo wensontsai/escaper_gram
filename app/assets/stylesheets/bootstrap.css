@@ -4079,8 +4079,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .nav > li > a:hover,
 .nav > li > a:focus {
-  text-decoration: none;
-  background-color: #eeeeee;
+
+  background-color: #362819;
 }
 
 .nav > li.disabled > a {

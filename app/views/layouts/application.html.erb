@@ -27,6 +27,7 @@
 
     <style type="text/css">
 
+ /* --d3 css--*/
       svg {
         width: 1280px;
         height: 800px;
@@ -46,6 +47,20 @@
 
 </head>
 <body>
+
+   <!-- sidebar -->
+        <div class="col-xs-4 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+
+          <%= render 'layouts/user_widget' %>
+            <br><br>
+            <ul>
+            <!--   <li class="active"><a href="#">Home</a></li> -->
+            <br><br><br>
+              <a href="/favorite_places/index">favorite escapes</a>
+            <br><br><br><br><br><br>
+              <a href="/favorite_photos/index">favorite photos</a>
+            </ul>
+        </div>
 
 <%= yield %>
 

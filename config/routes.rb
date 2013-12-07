@@ -1,5 +1,6 @@
 Escaper::Application.routes.draw do
 
+  devise_for :users
   get "countries/index"
   get "globe/index"
   get "map/index"
@@ -11,6 +12,9 @@ Escaper::Application.routes.draw do
   # get "/initial_images" => "home#initial_images"
   get "/get_images" => "home#get_images", :defaults => { :format => 'json' }
   get "/get_images_x_hrs_ago" => "home#get_images_x_hrs_ago"
+
+  get "favorite_places/index" => "favorite_places#index"
+  get "favorite_photos/index" => "favorite_photos#index"
 
   get "country/:name" => "countries#show"
   get "get_lat_lon" => "countries#get_lat_lon"
