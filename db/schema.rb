@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131207184643) do
+ActiveRecord::Schema.define(version: 20131207220127) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20131207184643) do
   create_table "favorite_places", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.decimal  "lat"
+    t.decimal  "lon"
+    t.text     "address"
   end
 
   create_table "photos_nows", force: true do |t|

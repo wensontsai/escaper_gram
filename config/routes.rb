@@ -16,6 +16,9 @@ Escaper::Application.routes.draw do
   get "favorite_places/index" => "favorite_places#index"
   get "favorite_photos/index" => "favorite_photos#index"
 
+  post "add_to_favorite_places" => "favorite_places#create"
+  get "remove_favorite_place" => "favorite_places#destroy"
+
   get "country/:name" => "countries#show"
   get "get_lat_lon" => "countries#get_lat_lon"
   get "globe_photos" => "countries#country_pictures"

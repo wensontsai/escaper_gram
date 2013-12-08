@@ -5,7 +5,8 @@
             <li id="site-title"><a href="/globe/index">Escapergram</a></li>
             <li id="my_nav_info"><a href="/globe/index"> lets go again . </a></li>
             <li><button id="x_hrs_button" type="button">2 hours ago</button></li>
-            <li id="updater">this is happening now on <%= params[:address] %></li>
+            <li id="updater">this is happening now on <%= params[:address] %>   <button id="add_to_favorite_places" type="button">favorite</button></li>
+
           </ul>
 
         </div>
@@ -148,10 +149,15 @@ refresher();
           $( "#updater").html("this is " +(hours_ago-2)+ " hours ago on "+address);
         } else {
           $( "#updater").html("you've seen the last 24hrs");
-
-
       }
+  });
 
+  $("#add_to_favorite_places").click(function(event){
+          $.ajax({
+            type: "POST",
+            url: "/add_to_favorite_places",
+            data: {lat: my_lat, lon: my_lon, address: address}
+          });
   });
 
 

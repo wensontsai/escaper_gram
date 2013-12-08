@@ -12,6 +12,15 @@
  *= require_tree .
  */
 
+#favorites_places th, td {
+  padding: 5px 30px 5px 0px;
+}
+
+ .body_stuff {
+  width: 1170px;
+
+ }
+
 .starter-template {
   float: left;
 }

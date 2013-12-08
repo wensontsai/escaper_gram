@@ -11,9 +11,33 @@
 
           <!--main content -->
       <div class="starter-template">
+        <div class="body_stuff">
+          <br><br><br><br>
+            <h5><%= current_user.email %>'s' favorite escapes :</h5>
+            <br>
+            <table id="favorites_places">
+              <tr>
+                <th>address</th>
+                <th>latitude</th>
+                <th>longitude</th>
+              </tr>
 
-        favorite places list here
+              <% @favorite_places.each do |place| %>
+                <tr>
 
+                  <td><%= place.address %></td>
+                  <td><%= place.lat %></td>
+                  <td><%= place.lon %></td>
+                  <td><button>
+                  <%= link_to( "go now", get_images_path(:html) + "?lat=#{place.lat}&lon=#{place.lon}&address=#{place.address}" ) %>
+                  </button></td>
+
+                </tr>
+              <% end %>
+            </table>
+        </div>
       </div>
 
 </div><!-- /.container -->
+
+
