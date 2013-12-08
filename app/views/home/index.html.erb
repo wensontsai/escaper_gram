@@ -155,8 +155,8 @@ refresher();
   $("#add_to_favorite_places").click(function(event){
           $.ajax({
             type: "POST",
-            url: "/add_to_favorite_places",
-            data: {lat: my_lat, lon: my_lon, address: address}
+            url: "add_to_favorite_places",
+            data: {lat: my_lat, lon: my_lon, address: address, user_id: <%= current_user.id %>}
           });
   });
 

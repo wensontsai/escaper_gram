@@ -31,6 +31,9 @@
                   <td><button>
                   <%= link_to( "go now", get_images_path(:html) + "?lat=#{place.lat}&lon=#{place.lon}&address=#{place.address}" ) %>
                   </button></td>
+                   <td><button>
+                  <%= link_to( "remove", favorite_place_path(params[:id]), method: :delete) %>
+                  </button></td>
 
                 </tr>
               <% end %>
