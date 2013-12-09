@@ -15,29 +15,35 @@
           <br><br><br><br>
             <h5><%= current_user.email %>'s favorite places to go </h5>
             <br>
+        <% if current_user.favorite_places.length > 0 %>
             <table id="favorites_places">
               <tr>
                 <th>address</th>
                 <th>latitude</th>
                 <th>longitude</th>
               </tr>
-              <% @favorite_places.each do |place| %>
-                <tr>
-                  <% if place.user.id == current_user.id %>
-                      <td><%= place.address %></td>
-                      <td><%= place.lat %></td>
-                      <td><%= place.lon %></td>
-                <!--       <td>user_id = <%= place.user.id %></td> -->
-                      <td><button>
-                      <%= link_to( "go now", get_images_path(:html) + "?lat=#{place.lat}&lon=#{place.lon}&address=#{place.address}" ) %>
-                      </button></td>
-                       <td><button>
-                      <%= link_to( "remove", favorite_place_path(params[:id]), method: :delete) %>
-                      </button></td>
+                  <% @favorite_places.each do |place| %>
+                    <tr>
+                        <% if place.user.id == current_user.id %>
+                            <td><%= place.address %></td>
+                            <td><%= place.lat %></td>
+                            <td><%= place.lon %></td>
+                            <td><button>
+                            <%= link_to( "go now", get_images_path(:html) + "?lat=#{place.lat}&lon=#{place.lon}&address=#{place.address}" ) %>
+                            </button></td>
+                             <td><button>
+                            <%= link_to( "remove", favorite_place_path(params[:id]), method: :delete) %>
+                            </button></td>
+                        <% end %>
+                    </tr>
                   <% end %>
-                </tr>
-              <% end %>
             </table>
+        <% else %>
+              You have no favorites yet.<br>
+              Once you click to an address, favorite it by pressing <br>
+              the button in the top left corner!
+        <% end %>
+
         </div>
       </div>
 
