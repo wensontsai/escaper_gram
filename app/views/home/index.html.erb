@@ -156,11 +156,10 @@ refresher();
           $.ajax({
             type: "POST",
             url: "add_to_favorite_places",
-            data: {lat: my_lat, lon: my_lon, address: address, user_id: <%= current_user.id %>}
+            data: {lat: my_lat, lon: my_lon, address: address, user_id: <%= current_user.id %>},
+            success: alert(address+'has been added to favorites!')
           });
   });
-
-
 
 });
 </script>

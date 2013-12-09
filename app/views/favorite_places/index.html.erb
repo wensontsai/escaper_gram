@@ -46,7 +46,7 @@
         <% else %>
               You have no favorites yet.<br>
               Once you click to an address, favorite it by pressing <br>
-              the button in the top left corner!
+              the button in the top right corner!
         <% end %>
 
         </div>
@@ -56,8 +56,19 @@
 
 <script>
 $(function() {
+
+var user_fav_length = <%= current_user.favorite_places.length %>;
+debugger;
+
+
   function removeRow(id) {
     $('#row'+id).fadeOut();
+    user_fav_length--;
+    debugger;
+
+    if(user_fav_length === 0) {
+      $('#favorites_places').html('You have no favorites yet.<br>Once you click to an address, favorite it by pressing<br>the button in the top right corner!');
+    }
   }
 
   <% @favorite_places.each do |place| %>
