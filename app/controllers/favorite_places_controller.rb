@@ -45,7 +45,7 @@ class FavoritePlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def favorite_place_params
-      params.permit(:user_id, :lat, :lon, :address)
+      params.permit(:user_id, :lat, :lon, :address, :id)
     end
 
 end

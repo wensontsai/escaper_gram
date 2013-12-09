@@ -2,7 +2,7 @@
         <div class="my_navbar">
           <ul>
             <li id="site-title"><a href="/globe/index">Escapergram</a></li>
-            <li id="my_nav_info"><a href="/globe/index"> lets go again . </a></li>
+            <li id="my_nav_info"><a href="/globe/index"> lets go again. </a></li>
 
           </ul>
 
@@ -13,7 +13,7 @@
       <div class="starter-template">
         <div class="body_stuff">
           <br><br><br><br>
-            <h5><%= current_user.email %>'s' favorite escapes :</h5>
+            <h5><%= current_user.email %>'s favorite places to go </h5>
             <br>
             <table id="favorites_places">
               <tr>
@@ -21,20 +21,20 @@
                 <th>latitude</th>
                 <th>longitude</th>
               </tr>
-
               <% @favorite_places.each do |place| %>
                 <tr>
-
-                  <td><%= place.address %></td>
-                  <td><%= place.lat %></td>
-                  <td><%= place.lon %></td>
-                  <td><button>
-                  <%= link_to( "go now", get_images_path(:html) + "?lat=#{place.lat}&lon=#{place.lon}&address=#{place.address}" ) %>
-                  </button></td>
-                   <td><button>
-                  <%= link_to( "remove", favorite_place_path(params[:id]), method: :delete) %>
-                  </button></td>
-
+                  <% if place.user.id == current_user.id %>
+                      <td><%= place.address %></td>
+                      <td><%= place.lat %></td>
+                      <td><%= place.lon %></td>
+                <!--       <td>user_id = <%= place.user.id %></td> -->
+                      <td><button>
+                      <%= link_to( "go now", get_images_path(:html) + "?lat=#{place.lat}&lon=#{place.lon}&address=#{place.address}" ) %>
+                      </button></td>
+                       <td><button>
+                      <%= link_to( "remove", favorite_place_path(params[:id]), method: :delete) %>
+                      </button></td>
+                  <% end %>
                 </tr>
               <% end %>
             </table>
