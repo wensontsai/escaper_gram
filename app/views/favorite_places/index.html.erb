@@ -22,9 +22,8 @@
                 <th>latitude</th>
                 <th>longitude</th>
               </tr>
-                  <% @favorite_places.each do |place| %>
+                  <% current_user.favorite_places.each do |place| %>
                     <tr id='row<%=place.id%>'>
-                        <% if place.user.id == current_user.id %>
                             <td><%= place.address %></td>
                             <td><%= place.lat %></td>
                             <td><%= place.lon %></td>
@@ -39,7 +38,6 @@
                             <%#= button_to "delete", place, :method=>:delete %>
                             <!-- </button> -->
                           </td>
-                        <% end %>
                     </tr>
                   <% end %>
             </table>
