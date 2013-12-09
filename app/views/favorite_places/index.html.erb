@@ -23,7 +23,7 @@
                 <th>longitude</th>
               </tr>
                   <% @favorite_places.each do |place| %>
-                    <tr>
+                    <tr id='row<%=place.id%>'>
                         <% if place.user.id == current_user.id %>
                             <td><%= place.address %></td>
                             <td><%= place.lat %></td>
@@ -31,9 +31,14 @@
                             <td><button>
                             <%= link_to( "go now", get_images_path(:html) + "?lat=#{place.lat}&lon=#{place.lon}&address=#{place.address}" ) %>
                             </button></td>
-                             <td><button>
-                            <%= link_to( "remove", favorite_place_path(params[:id]), method: :delete) %>
-                            </button></td>
+                             <td>
+                              <button id='delete_<%=place.id%>'>Delete</button>
+                              <!-- <button> -->
+                            <%#= link_to( "remove", favorite_place_path(place.id), method: :delete) %>
+
+                            <%#= button_to "delete", place, :method=>:delete %>
+                            <!-- </button> -->
+                          </td>
                         <% end %>
                     </tr>
                   <% end %>
@@ -48,5 +53,31 @@
       </div>
 
 </div><!-- /.container -->
+
+<script>
+$(function() {
+  function removeRow(id) {
+    $('#row'+id).fadeOut();
+  }
+
+  <% @favorite_places.each do |place| %>
+    $('#delete_<%=place.id%>').click(function () {
+      $.ajax({
+        url: "<%=favorite_place_path(place.id)%>",
+        type: "post",
+        dataType: "json",
+        data: {"_method":"delete"},
+        success: function(response) {
+          if (response.success) {
+            removeRow(<%=place.id%>);
+          }else {
+            alert('deleting favorite item failed, sorry!');
+          }
+        }
+      });
+    });
+  <% end %>
+});
+</script>
 
 

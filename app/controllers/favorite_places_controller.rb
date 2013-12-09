@@ -12,7 +12,7 @@ class FavoritePlacesController < ApplicationController
   end
 
   def create
-    @favorite_place = FavoritePlace.new(favorite_place_params)
+    @favorite_place = FavoritePlace.create(favorite_place_params)
 
     render json: {}
     # respond_to do |format|
@@ -29,12 +29,17 @@ class FavoritePlacesController < ApplicationController
 
   def destroy
     @favorite_place = FavoritePlace.find(params[:id])
-    @favorite_place.destroy
-
-    respond_to do |format|
-      format.html { redirect_to favorite_place_url }
-      format.json { head :no_content }
+    if @favorite_place.destroy
+      render json: {success:true}
+    else
+      render json: {success:false}
     end
+
+    # respond_to do |format|
+    #   format.html { redirect_to favorite_place_url }
+    #   format.json { head :no_content }
+    # end
+
   end
 
   private

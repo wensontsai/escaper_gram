@@ -17,7 +17,7 @@ Escaper::Application.routes.draw do
   get "favorite_photos/index" => "favorite_photos#index"
 
   post "add_to_favorite_places" => "favorite_places#create"
-  delete "remove_favorite_place" => "favorite_places#destroy"
+  # get "remove_favorite_place" => "favorite_places#destroy"
   resources :favorite_places
 
   get "country/:name" => "countries#show"

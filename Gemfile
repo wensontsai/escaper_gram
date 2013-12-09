@@ -9,6 +9,7 @@ gem 'sidekiq'
 gem 'httparty'
 
 gem 'instagram'
+gem "quiet_assets"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
