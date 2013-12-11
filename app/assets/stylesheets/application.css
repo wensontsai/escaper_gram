@@ -11,6 +11,11 @@
  *= require_self
  *= require_tree .
  */
+#no_account_landing {
+  padding: 120px 0px 0px 60px;
+  text-align: left;
+  float: left;
+}
 
 #favorites_places th, td {
   padding: 5px 30px 5px 0px;
