@@ -123,7 +123,7 @@ refresher();
 
       if (hours_ago === 2){
           $( "#my_nav_info").append(
-            '<li id="my_nav_info"><%= link_to( "back to now.", get_images_path(:html) + "?lat=#{params[:lat]}&lon=#{params[:lon]}&address=#{URI::encode( params[:address] ) if params[:address]}" ) %></li>');
+            '<li ><%= link_to( "back to now.", get_images_path(:html) + "?lat=#{params[:lat]}&lon=#{params[:lon]}&address=#{URI::encode( params[:address] ) if params[:address]}" ) %></li>');
 
           // $( "#initial_images" ).animate({
           //   opacity: 0.35,

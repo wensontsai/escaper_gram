@@ -11,28 +11,62 @@
  *= require_self
  *= require_tree .
  */
+.my_navbar {
+   zoom: 0.94;
+       -moz-transform: scale(0.94);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.94);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.94);
+        -webkit-transform-origin: 0 0;
+}
+
+
 #no_account_landing {
-  padding: 120px 0px 0px 60px;
+  zoom: 0.85;
+        -moz-transform: scale(0.85);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.85);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.85);
+        -webkit-transform-origin: 0 0;
+  padding: 30px 0px 0px 5px;
   text-align: left;
   float: left;
 }
 
 #favorites_places th, td {
+
   padding: 5px 30px 5px 0px;
 }
 
  .body_stuff {
-  width: 1170px;
+  zoom: 0.88;
+       -moz-transform: scale(0.88);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.88);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.88);
+        -webkit-transform-origin: 0 0;
+  width: 1000px;
 
  }
 
 .starter-template {
+  width: 1000px;
   float: left;
 }
 
 #sign_in,
 #sign_up {
-  padding: 15px 0px 0px 110px;
+  zoom: 0.90;
+        -moz-transform: scale(0.90);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.90);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.90);
+        -webkit-transform-origin: 0 0;
+  padding: 10px 0px 0px 10px;
   float:left;
 }
 
@@ -41,7 +75,14 @@
 }
 
 #sidebar{
-  padding: 30px 0px 0px 135px;
+  zoom: 0.88;
+        -moz-transform: scale(0.88);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.88);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.88);
+        -webkit-transform-origin: 0 0;
+  padding: 30px 10px 0px 100px;
   text-align: right;
 
 }
@@ -52,27 +93,49 @@
 }
 
 #initial_images_div{
+   zoom: 0.88;
+       -moz-transform: scale(0.88);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.88);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.88);
+        -webkit-transform-origin: 0 0;
   float: left;
 }
 
 #x_hrs_div{
+  zoom: 0.88;
+       -moz-transform: scale(0.88);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.88);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.88);
+        -webkit-transform-origin: 0 0;
   float: left;
 }
 
 #footer,
 #my_nav_info,
 #updater {
-  padding: 20px 0px 25px 0px;
+  zoom: 0.90;
+       -moz-transform: scale(0.90);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.90);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.90);
+        -webkit-transform-origin: 0 0;
+  padding: 25px 0px 25px 0px;
 }
 
 #map-canvas {
-  width: 1100px;
-  height: 1000px;
+  width: 870px;
+  height: 800px;
   clear: both;
 }
 
 #site-title {
   font-size: 25px;
+  padding-left: 10px;
 }
 
 #site-title a:hover{
@@ -104,11 +167,18 @@ a:visited {
   padding: 10px 0px 25px 0px;
   font-size: 15px;
   display: inline;
-  width: 250px;
+  width: 256px;
   float: left;
 }
 
 #x_hrs_button {
+  zoom: 0.85;
+        -moz-transform: scale(0.85);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.85);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.85);
+        -webkit-transform-origin: 0 0;
   font-size: 15px;
   padding: 10px;
 }
