@@ -1,6 +1,6 @@
 Escapergram !
 
-This is a geographic exploration tool built in Ruby-On-Rails, JavaScript, and Postgres
+This is a photographic exploration tool built in Ruby-On-Rails, JavaScript, and Postgres
 that kicks off with a 3D map (D3.js) for country select,
 before putting you on the ground within a 5 mile radius of the clicked location (Google Maps API)
 where the most recently uploaded Instagram photos can be explored as a feed (Instagram API).
